@@ -13,3 +13,19 @@ struct Node{
     }
 };
 
+Node* delFirst(Node *head){
+    if(head == NULL){return NULL;}
+    else{
+        Node *temp = head -> next;
+        delete head;
+        return temp;
+    }
+    
+}
+
+int main(){
+    Node *head = new Node(10);
+    head->next = new Node(20);
+    return 0;
+}
+
