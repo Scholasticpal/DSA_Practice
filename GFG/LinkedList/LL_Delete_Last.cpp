@@ -1,3 +1,5 @@
+// TC: Theta(n)
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<iostream>
@@ -14,10 +16,10 @@ struct Node{
 };
 
 Node* delLast(Node *head){
-    if(head == NULL){
+    if(head == NULL){       // if there is no nodes (head is NULL)
         return NULL;
     }
-    if(head->next == NULL){
+    if(head->next == NULL){ // if there is a single node
         delete head;
         return NULL;
     }
