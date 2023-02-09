@@ -15,7 +15,7 @@ struct Node{
 Node* insertAtPos(Node *head, int pos, int data){
     Node *temp = new Node(data);
     
-    if(pos == 1){
+    if(pos == 1){ //corner case if need to insert in start
         temp->next = head;
         return temp;
     }
@@ -24,7 +24,7 @@ Node* insertAtPos(Node *head, int pos, int data){
     for(int i = 1; i<= pos-2 && curr != NULL; i++){
         curr = curr-> next;
     }
-    if(curr == NULL) return head;
+    if(curr == NULL) return head; // corner case if pos is beyond linked list size
 
     temp ->next = curr->next;
     curr->next = temp;
