@@ -1,4 +1,3 @@
-// TC: O(N) SC:O(1)
 #include<iostream>
 #include<stdio.h>
 #include<stdlib.h>
@@ -11,21 +10,20 @@ struct Node{
     Node *prev;
     Node(int x){
         data = x;
-        next = prev = NULL;
+        next = prev = NULL;      
     }
 };
 
-Node *Reverse_DLL(Node *head){
-    if(head == NULL || head->next == NULL) return head; // corner case
-    Node *curr = head;
-    Node *prev = NULL;
-    while(curr != NULL){
-        prev = curr->prev;
-        curr->prev = curr->next;
-        curr->next = prev;
-        curr = curr->prev;
+Node* Delete_First_DLL(Node *head){
+    if(head == NULL)return NULL;
+    if(head->next == NULL){delete head; return NULL;}
+    else{
+        Node *temp = head;
+        head = head->next;
+        head->prev = NULL;
+        delete temp;
+        return head;
     }
-    return prev->prev;
 }
 
 int main(){
@@ -37,7 +35,6 @@ int main(){
     temp1->next = temp2;
     temp2->prev = temp1;
 
-    Reverse_DLL(head);
-
+    Delete_First_DLL(head);
     return 0;
 }
