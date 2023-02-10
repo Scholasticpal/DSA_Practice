@@ -34,7 +34,7 @@ int searchLLIterative(Node *head, int x){
     return -1;
 }
 
-int searchLLResursive(Node *head, int x){
+int searchLLRecursive(Node *head, int x){
     if(head == NULL) return -1;
     if(head->data == x){
         return 1;
@@ -52,5 +52,6 @@ int main(){
     head->next->next = new Node(30);
     int x = 20;
     searchLLIterative(head,x);
+    searchLLRecursive(head,x);
     return 0;
 }
