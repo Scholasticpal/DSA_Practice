@@ -1,5 +1,5 @@
-// TC: O(n) - n is no. of nodes
-// SC: O(H) - H is height of binary tree
+// TC: we only do constant amount of time for every node, and n nodes are there so: O(n)
+// SC: atmost we have no. of items in recursion call stack being the height of binary tree(H) so: O(H)
 #include<iostream>
 using namespace std;
 
