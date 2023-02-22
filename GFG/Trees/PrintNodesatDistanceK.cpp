@@ -1,4 +1,6 @@
 // Given K = 0,1,2,3,... print all the nodes at the distance K from the root.
+// TC: O(n) - worst case traverse through every node
+// SC: O(H) - proportional to height to binary tree as worst case, all calls will be along height of the tree
 
 
 #include<iostream>
