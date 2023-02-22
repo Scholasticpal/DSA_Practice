@@ -10,8 +10,8 @@
     - visit every level and print all nodes from left to right
 
 2. Depth First Traversal
-    - Inorder
-    - Preorder
-    - Postorder
+    - Inorder (left root right)
+    - Preorder (root left right)
+    - Postorder (left right root)
 
 */
