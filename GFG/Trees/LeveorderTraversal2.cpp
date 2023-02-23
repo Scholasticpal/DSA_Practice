@@ -16,6 +16,10 @@ struct Node{
 
 // Solution 2
 // two loops, one for calling each level, one for printing a level.
+// TC: We traverse n nodes. For Every node, theres enqueue once and dequeue once (O(1) each)
+// we do this for n nodes, so O(n).
+// SC: theta(w) w = width or O(n)
+
 void printLevelorderLine2(Node *root){
     if(root == NULL){return;}
     queue<Node *> q;
