@@ -1,4 +1,6 @@
-
+// Solution 1: Recursive- Preorder Traversal
+// TC: Theta(n)
+// SC: Theta(H)
 #include<iostream>
 using namespace std;
 
