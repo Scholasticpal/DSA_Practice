@@ -2,13 +2,12 @@
 //  -  The difference of height of left subtree and right subtree should not be more than one.
 //  -  True for every Node
 
-// Solution 1: Naive Solution
-// TC: O(n2)
-// - find height of left subtree and right subtree, and their difference should be <=1
-// - check if left subtree is recursively balanced
-// - check is right subtree is recursively balanced
+//Solution 2: Optimized
+// TC: O(n)
+
 
 #include<iostream>
+#include <math.h>
 using namespace std;
 
 struct Node{
@@ -21,18 +20,14 @@ struct Node{
     }
 };
 
-int height(Node *root){
-    if(root==NULL){
-        return 0;
-    }
-    return max(height(root->left), height(root->right))+1;
-}
-
-bool isBalanced(Node *root){
-    if(root == NULL){return true;}
-    int lh = height(root->left);
-    int rh = height(root->right);
-    return (abs(lh-rh) <=1 && isBalanced(root->left) && isBalanced(root->right));
+int isBalanced2(Node *root){
+    if(root==NULL){return 0;}
+    int lh = isBalanced2(root->left);
+    if(lh== -1){return -1;}
+    int rh = isBalanced2(root->right);
+    if(rh == -1){return -1;}
+    if(abs(lh-rh)>1){return -1;}
+    else{return max(lh,rh)+1;}
 }
 
 int main(){
@@ -45,6 +40,9 @@ int main(){
     root->right->right->left = new Node(70);
     root->right->right->right = new Node(80);
 
-    cout<<isBalanced(root);
+    if(isBalanced2(root)==-1){cout<<"false";}
+    else{
+        cout<<"true";
+    }
     return 0;
 }
