@@ -1,0 +1,10 @@
+#poketable {
+  border: 3px solid black;
+}
+
+#pokeImg {
+  margin: 20px 0 20px 0;
+  border: 3px solid black;
+  height: 250px;
+  width: 250px;
+}

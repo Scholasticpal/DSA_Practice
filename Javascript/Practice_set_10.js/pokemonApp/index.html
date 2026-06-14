@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Pokemon App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Pokedex!</h1>
+      <h3>Enter pokemon name to know more about that type of pokemon.</h3>
+      <form id="pokeForm">
+        <input id="pokeInput" type="text" />
+        <button id="pokeButton" type="submit">Search</button>
+      </form>
+
+      <h3 id="pokeName"></h3>
+      <img id="pokeImg" />
+
+      <div>
+        <h3>Stats</h3>
+        <table id="pokeStats">
+          <thead>
+            <th>S.No.</th>
+            <th>Property</th>
+            <th>value</th>
+          </thead>
+          <tbody id="pokeStatsBody"></tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3>type</h3>
+        <p id="pokeType"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+<!-- 
+input name: species.name 
+image: sprites.front_default stats :
+stats[i].stat.name,
+ stats[i].base_stat 
+ - hp 
+ - attack 
+ - defence 
+ - special attack
+  - special defence 
+  - speed 
+- type: types[i].type.name = "electric" 
+-->
